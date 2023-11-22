@@ -1,6 +1,6 @@
 {
   "name": "@user530/ws_game_shared",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Shared data for ws_game app",
   "main": "dist/index.js",
   "repository": {
@@ -16,13 +16,15 @@
   "exports": {
     "./enums": "./dist/enums/index.js",
     "./interfaces": "./dist/interfaces/index.js",
-    "./types": "./dist/types/index.js"
+    "./types": "./dist/types/index.js",
+    "./creators": "./dist/creators/index.js"
   },
   "typesVersions": {
     "*": {
       "enums": ["dist/enums/index.d.ts"],
       "interfaces": ["dist/interfaces/index.d.ts"],
-      "types": ["dist/types/index.d.ts"]
+      "types": ["dist/types/index.d.ts"],
+      "creators": ["dist/creators/index.d.ts"]
     }
   },
   "bugs": {
