@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GameFieldSquare = exports.GameTableRow = exports.GameTableCol = exports.GameStatus = void 0;
+exports.GameTurnResult = exports.GameFieldSquare = exports.GameTableRow = exports.GameTableCol = exports.GameStatus = void 0;
 var game_status_enum_1 = require("./game-status.enum");
 Object.defineProperty(exports, "GameStatus", { enumerable: true, get: function () { return game_status_enum_1.GameStatus; } });
 var game_table_col_enum_1 = require("./game-table-col.enum");
@@ -9,3 +9,5 @@ var game_table_row_enum_1 = require("./game-table-row.enum");
 Object.defineProperty(exports, "GameTableRow", { enumerable: true, get: function () { return game_table_row_enum_1.GameTableRow; } });
 var game_field_enum_1 = require("./game-field.enum");
 Object.defineProperty(exports, "GameFieldSquare", { enumerable: true, get: function () { return game_field_enum_1.GameFieldSquare; } });
+var game_turn_result_enum_1 = require("./game-turn-result.enum");
+Object.defineProperty(exports, "GameTurnResult", { enumerable: true, get: function () { return game_turn_result_enum_1.GameTurnResult; } });
