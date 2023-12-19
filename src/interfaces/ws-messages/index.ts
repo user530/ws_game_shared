@@ -2,11 +2,9 @@ import { HubCommandHostGame, HubCommandJoinGame, HubCommandDataType } from './ga
 import { LobbyCommandStartGame, LobbyCommandAbortGame, LobbyCommandKickGuest, LobbyCommandDataType } from './game-lobby.ws-message';
 import { GameCommandMakeTurn, GameCommandForfeit, GameCommandDataType } from './game-instance.ws-message';
 import { ChatMessage } from './chat.ws-message';
-import { ErrorMessage } from './error.ws-message';
 
 export {
     ChatMessage,
-    ErrorMessage,
     HubCommandHostGame,
     HubCommandJoinGame,
     LobbyCommandStartGame,

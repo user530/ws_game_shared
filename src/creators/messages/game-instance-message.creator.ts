@@ -1,4 +1,4 @@
-import { GameCommandMakeTurn, GameCommandDataType, GameCommandForfeit } from '../interfaces';
+import { GameCommandMakeTurn, GameCommandDataType, GameCommandForfeit } from '../../interfaces/ws-messages';
 
 export const createGameMakeTurnMessage = (turnData: GameCommandDataType): GameCommandMakeTurn => {
     return { version: 1, type: 'game_command', command: 'make_turn', data: turnData };

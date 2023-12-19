@@ -1,6 +1,6 @@
 {
   "name": "@user530/ws_game_shared",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Shared data for ws_game app",
   "main": "dist/index.js",
   "repository": {
@@ -15,18 +15,24 @@
   "license": "ISC",
   "exports": {
     "./enums": "./dist/enums/index.js",
-    "./interfaces": "./dist/interfaces/index.js",
+    "./interfaces/ws-events": "./dist/interfaces/ws-events/index.js",
+    "./interfaces/ws-messages": "./dist/interfaces/ws-messages/index.js",
+    "./interfaces/ws-listeners": "./dist/interfaces/ws-listeners/index.js",
     "./types": "./dist/types/index.js",
-    "./creators": "./dist/creators/index.js",
+    "./creators/events": "./dist/creators/events/index.js",
+    "./creators/messages": "./dist/creators/messages/index.js",
     "./helpers": "./dist/helpers/index.js"
   },
   "typesVersions": {
     "*": {
-      "enums": ["dist/enums/index.d.ts"],
-      "interfaces": ["dist/interfaces/index.d.ts"],
-      "types": ["dist/types/index.d.ts"],
-      "creators": ["dist/creators/index.d.ts"],
-      "helpers": ["dist/helpers/index.d.ts"]
+    "enums": ["dist/enums/index.d.ts"],
+    "interfaces/ws-events": ["dist/interfaces/ws-events/index.d.ts"],
+    "interfaces/ws-messages": ["dist/interfaces/ws-messages/index.d.ts"],
+    "interfaces/ws-listeners": ["dist/interfaces/ws-listeners/index.d.ts"],
+    "types": ["dist/types/index.d.ts"],
+    "creators/events": ["dist/creators/events/index.d.ts"],
+    "creators/messages": ["dist/creators/messages/index.d.ts"],
+    "helpers": ["dist/helpers/index.d.ts"]
     }
   },
   "bugs": {

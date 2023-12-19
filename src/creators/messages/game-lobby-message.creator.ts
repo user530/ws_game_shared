@@ -1,4 +1,4 @@
-import { LobbyCommandStartGame, LobbyCommandAbortGame, LobbyCommandKickGuest, LobbyCommandDataType } from '../interfaces';
+import { LobbyCommandStartGame, LobbyCommandAbortGame, LobbyCommandKickGuest, LobbyCommandDataType } from '../../interfaces/ws-messages';
 
 export const createLobbyStartMessage = (lobbyData: LobbyCommandDataType): LobbyCommandStartGame => {
     return { version: 1, type: 'lobby_command', command: 'start_game', data: lobbyData };

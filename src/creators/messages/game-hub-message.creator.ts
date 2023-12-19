@@ -1,4 +1,4 @@
-import { HubCommandHostGame, HubCommandJoinGame, HubCommandDataType } from '../interfaces';
+import { HubCommandHostGame, HubCommandJoinGame, HubCommandDataType } from '../../interfaces/ws-messages';
 
 export const createHubHostMessage = (playerData: Pick<HubCommandDataType, 'player_id'>): HubCommandHostGame => {
     return { version: 1, type: 'gamehub_command', command: 'host_game', data: playerData };
