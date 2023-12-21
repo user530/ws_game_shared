@@ -1,8 +1,8 @@
-import { BaseWSMessageType, LobbyCommandType, MessageType } from '../../types';
+import { BaseWSMessageType, LobbyCommand, MessageType } from '../../types';
 
 interface BaseLobbyCommandMessage extends BaseWSMessageType {
-    type: Extract<MessageType, 'lobby_command'>,
-    command: LobbyCommandType,
+    type: MessageType.LobbyCommand,
+    command: LobbyCommand,
 }
 
 export interface LobbyCommandDataType {
@@ -10,16 +10,16 @@ export interface LobbyCommandDataType {
 }
 
 export interface LobbyCommandStartGame extends BaseLobbyCommandMessage {
-    command: Extract<LobbyCommandType, 'start_game'>,
-    data: Pick<LobbyCommandDataType, 'game_id'>,
+    command: LobbyCommand.StartGame,
+    data: LobbyCommandDataType,
 }
 
 export interface LobbyCommandAbortGame extends BaseLobbyCommandMessage {
-    command: Extract<LobbyCommandType, 'abort_game'>,
-    data: Pick<LobbyCommandDataType, 'game_id'>,
+    command: LobbyCommand.AbortGame,
+    data: LobbyCommandDataType,
 }
 
 export interface LobbyCommandKickGuest extends BaseLobbyCommandMessage {
-    command: Extract<LobbyCommandType, 'kick_guest'>,
-    data: Pick<LobbyCommandDataType, 'game_id'>,
+    command: LobbyCommand.KickGuest,
+    data: LobbyCommandDataType,
 }

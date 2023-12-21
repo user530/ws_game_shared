@@ -1,8 +1,10 @@
-export type GameCommandType =
-    | 'make_turn'
-    | 'forfeit_match'
+export enum GameCommand {
+    MakeTurn = 'make_turn',
+    ForfeitMatch = 'forfeit_match',
+}
 
-export type GameEventType =
-    | 'game_won'
-    | 'game_draw'
-    | 'new_turn'
+export enum GameEvent {
+    GameWon = 'game_won',
+    GameDraw = 'game_draw',
+    NewTurn = 'new_turn',
+}

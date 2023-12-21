@@ -1,10 +1,9 @@
-import { BaseWSMessageType, GameCommandType, MessageType } from '../../types';
+import { BaseWSMessageType, GameCommand, MessageType } from '../../types';
 import { GameTableCol, GameTableRow } from '../../enums';
-import { GameEventType } from '../../types/game-instance.type';
 
 interface BaseGameCommandMessage extends BaseWSMessageType {
-    type: Extract<MessageType, 'game_command'>,
-    command: GameCommandType,
+    type: MessageType.GameCommand,
+    command: GameCommand,
 }
 
 export interface GameCommandDataType {
@@ -15,16 +14,11 @@ export interface GameCommandDataType {
 }
 
 export interface GameCommandMakeTurn extends BaseGameCommandMessage {
-    command: Extract<GameCommandType, 'make_turn'>,
+    command: GameCommand.MakeTurn,
     data: GameCommandDataType,
 }
 
 export interface GameCommandForfeit extends BaseGameCommandMessage {
-    command: Extract<GameCommandType, 'forfeit_match'>,
+    command: GameCommand.ForfeitMatch,
     data: Pick<GameCommandDataType, 'game_id' | 'player_id'>,
-}
-
-interface BaseGameEventMessage extends BaseWSMessageType {
-    type: Extract<MessageType, 'game_event'>,
-    command: GameEventType,
 }

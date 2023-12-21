@@ -1,4 +1,5 @@
-export type LobbyCommandType =
-    | 'start_game'
-    | 'abort_game'
-    | 'kick_guest'
+export enum LobbyCommand {
+    StartGame = 'start_game',
+    AbortGame = 'abort_game',
+    KickGuest = 'kick_guest',
+}

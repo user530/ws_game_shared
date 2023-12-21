@@ -1,10 +1,9 @@
-import { BaseWSMessageType, MessageType } from '../../types';
+import { BaseWSMessageType, MessageType, GameEvent } from '../../types';
 import { GameTableCol, GameTableRow } from '../../enums';
-import { GameEventType } from '../../types/game-instance.type';
 
 interface BaseGameEventMessage extends BaseWSMessageType {
-    type: Extract<MessageType, 'game_event'>,
-    command: GameEventType,
+    type: MessageType.GameEvent,
+    command: GameEvent,
 }
 
 export interface GameTurnDataType {
@@ -14,15 +13,15 @@ export interface GameTurnDataType {
 }
 
 export interface GameEventGameWon extends BaseGameEventMessage {
-    command: Extract<GameEventType, 'game_won'>,
+    command: GameEvent.GameWon,
     data: { player_id: string },
 }
 
 export interface GameEventGameDraw extends BaseGameEventMessage {
-    command: Extract<GameEventType, 'game_draw'>,
+    command: GameEvent.GameDraw,
 }
 
 export interface GameEventNewTurn extends BaseGameEventMessage {
-    command: Extract<GameEventType, 'new_turn'>,
+    command: GameEvent.NewTurn,
     data: GameTurnDataType,
 }

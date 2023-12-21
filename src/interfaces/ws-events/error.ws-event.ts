@@ -1,7 +1,7 @@
-import { BaseWSMessageType } from '../../types';
+import { BaseWSMessageType, MessageType } from '../../types';
 
 export interface ErrorEvent extends BaseWSMessageType {
-    type: 'error',
+    type: MessageType.ErrorMessage,
     code: number,
     message: string,
 }

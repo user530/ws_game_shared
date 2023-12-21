@@ -1,8 +1,8 @@
-import { BaseWSMessageType, HubCommandType, MessageType } from '../../types';
+import { BaseWSMessageType, HubCommand, MessageType } from '../../types';
 
 interface BaseHubCommandMessage extends BaseWSMessageType {
-    type: Extract<MessageType, 'gamehub_command'>,
-    command: HubCommandType,
+    type: MessageType.HubCommand,
+    command: HubCommand,
 }
 
 export interface HubCommandDataType {
@@ -11,11 +11,11 @@ export interface HubCommandDataType {
 }
 
 export interface HubCommandHostGame extends BaseHubCommandMessage {
-    command: Extract<HubCommandType, 'host_game'>,
+    command: HubCommand.HostGame,
     data: Pick<HubCommandDataType, 'player_id'>,
 }
 
 export interface HubCommandJoinGame extends BaseHubCommandMessage {
-    command: Extract<HubCommandType, 'join_game'>,
+    command: HubCommand.JoinGame,
     data: HubCommandDataType,
 }
