@@ -2,13 +2,13 @@ import { GameEventGameDraw, GameEventGameWon, GameEventNewTurn, ErrorEvent } fro
 import { GameCommandMakeTurn, GameCommandForfeit } from '../ws-messages/game-instance.ws-message';
 
 export interface GameInstanceEventsHandler {
-    wsErrorListener(errEvent: ErrorEvent): void;
-    wsGameWonListener(gameWonEvent: GameEventGameWon): void;
-    wsGameDrawListener(gameDrawEvent: GameEventGameDraw): void;
-    wsGameNewTurnListener(newTurnEvent: GameEventNewTurn): void;
+    wsErrorListener(socket: unknown, errEvent: ErrorEvent): Promise<void>;
+    wsGameWonListener(socket: unknown, gameWonEvent: GameEventGameWon): Promise<void>;
+    wsGameDrawListener(socket: unknown, gameDrawEvent: GameEventGameDraw): Promise<void>;
+    wsGameNewTurnListener(socket: unknown, newTurnEvent: GameEventNewTurn): Promise<void>;
 }
 
 export interface GameInstanceMessagesHandler {
-    wsGameMakeTurnListener(newTurnMessage: GameCommandMakeTurn): void;
-    wsGameForfeitListener(gameForfeitMessage: GameCommandForfeit): void;
+    wsGameMakeTurnListener(socket: unknown, newTurnMessage: GameCommandMakeTurn): Promise<void>;
+    wsGameForfeitListener(socket: unknown, gameForfeitMessage: GameCommandForfeit): Promise<void>;
 }
