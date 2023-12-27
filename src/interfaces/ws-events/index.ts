@@ -1,5 +1,6 @@
 import { ErrorEvent } from './error.ws-event';
 import { GameEventGameWon, GameEventGameDraw, GameEventNewTurn, GameTurnDataType } from './game-instance.ws-event';
+import { HubEventUpdateGames, HubGameDataType } from './game-hub.ws-event';
 
 export {
     ErrorEvent,
@@ -7,4 +8,6 @@ export {
     GameEventGameDraw,
     GameEventNewTurn,
     GameTurnDataType,
+    HubEventUpdateGames,
+    HubGameDataType,
 }
