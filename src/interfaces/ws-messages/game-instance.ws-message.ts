@@ -7,8 +7,8 @@ interface BaseGameCommandMessage extends BaseWSMessageType {
 }
 
 export interface GameCommandDataType {
-    game_id: string,
-    player_id: string,
+    gameId: string,
+    playerId: string,
     row: GameTableRow,
     column: GameTableCol,
 }
@@ -20,5 +20,15 @@ export interface GameCommandMakeTurn extends BaseGameCommandMessage {
 
 export interface GameCommandForfeit extends BaseGameCommandMessage {
     command: GameCommand.ForfeitMatch,
-    data: Pick<GameCommandDataType, 'game_id' | 'player_id'>,
+    data: Pick<GameCommandDataType, 'gameId' | 'playerId'>,
+}
+
+export interface GameCommandLeaveToLobby extends BaseGameCommandMessage {
+    command: GameCommand.LeaveToLobby,
+    data: Pick<GameCommandDataType, 'playerId'>
+}
+
+export interface GameCommandLeaveToHub extends BaseGameCommandMessage {
+    command: GameCommand.LeaveToHub,
+    data: Pick<GameCommandDataType, 'playerId'>
 }

@@ -6,20 +6,32 @@ interface BaseLobbyCommandMessage extends BaseWSMessageType {
 }
 
 export interface LobbyCommandDataType {
-    game_id: string,
+    lobbyId: string,
+    gameId: string,
+    playerId: string,
 }
 
 export interface LobbyCommandStartGame extends BaseLobbyCommandMessage {
     command: LobbyCommand.StartGame,
-    data: LobbyCommandDataType,
+    data: Pick<LobbyCommandDataType, 'lobbyId' | 'gameId'>,
 }
 
-export interface LobbyCommandAbortGame extends BaseLobbyCommandMessage {
-    command: LobbyCommand.AbortGame,
-    data: LobbyCommandDataType,
+export interface LobbyCommandCloseLobby extends BaseLobbyCommandMessage {
+    command: LobbyCommand.CloseLobby,
+    data: Pick<LobbyCommandDataType, 'lobbyId'>,
+}
+
+export interface LobbyCommandLeaveLobby extends BaseLobbyCommandMessage {
+    command: LobbyCommand.LeaveLobby,
+    data: Pick<LobbyCommandDataType, 'lobbyId'>,
 }
 
 export interface LobbyCommandKickGuest extends BaseLobbyCommandMessage {
     command: LobbyCommand.KickGuest,
-    data: LobbyCommandDataType,
+    data: Pick<LobbyCommandDataType, 'lobbyId'>,
+}
+
+export interface LobbyCommandPlayerReady extends BaseLobbyCommandMessage {
+    command: LobbyCommand.KickGuest,
+    data: Pick<LobbyCommandDataType, 'lobbyId' | 'playerId'>,
 }
