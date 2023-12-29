@@ -15,3 +15,12 @@ export interface HubEventUpdateGames extends BaseHubEventMessage {
     command: HubEvent.UpdateGames,
     data: HubGameDataType[],
 }
+
+export interface HubEventQuitHub extends BaseHubEventMessage {
+    command: HubEvent.QuitHub,
+}
+
+export interface HubEventMovedToLobby extends BaseHubEventMessage {
+    command: HubEvent.MovedToLobby,
+    data: { lobbyId: string },
+}

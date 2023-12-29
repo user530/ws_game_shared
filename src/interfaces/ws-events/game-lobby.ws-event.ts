@@ -17,4 +17,24 @@ export interface LobbyEventGuestJoined extends BaseLobbyEventMessage {
 
 export interface LobbyEventGuestLeft extends BaseLobbyEventMessage {
     command: LobbyEvent.GuestLeft,
+    data: { guestId: string },
+}
+
+export interface LobbyEventMoveToGame extends BaseLobbyEventMessage {
+    command: LobbyEvent.MovedToGame,
+    data: { gameId: string }
+}
+
+export interface LobbyEventMoveToHub extends BaseLobbyEventMessage {
+    command: LobbyEvent.MovedToHub,
+}
+
+export interface LobbyEventLobbyClosed extends BaseLobbyEventMessage {
+    command: LobbyEvent.LobbyClosed,
+    data: { lobbyId: string },
+}
+
+export interface LobbyEventReadinessChanged extends BaseLobbyEventMessage {
+    command: LobbyEvent.ReadinessChanged,
+    data: { playerId: string },
 }

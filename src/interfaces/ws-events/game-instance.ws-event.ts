@@ -25,3 +25,17 @@ export interface GameEventNewTurn extends BaseGameEventMessage {
     command: GameEvent.NewTurn,
     data: GameTurnDataType,
 }
+
+export interface GameEventYourTurn extends BaseGameEventMessage {
+    command: GameEvent.YourTurn,
+    data: { turnTimeout: Date },
+}
+
+export interface GameEventMovedToLobby extends BaseGameEventMessage {
+    command: GameEvent.MovedToLobby,
+    data: { lobbyId: string },
+}
+
+export interface GameEventMovedToHub extends BaseGameEventMessage {
+    command: GameEvent.MovedToHub,
+}
