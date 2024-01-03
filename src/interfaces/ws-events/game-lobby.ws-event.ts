@@ -5,36 +5,29 @@ interface BaseLobbyEventMessage extends BaseWSMessageType {
     command: LobbyEvent,
 }
 
-export interface LobbyGuestDataType {
+export interface LobbyEventJoinedData {
     guestId: string,
     guestName: string,
 }
 
+export interface LobbyEventGameData {
+    gameId: string,
+}
+
 export interface LobbyEventGuestJoined extends BaseLobbyEventMessage {
     command: LobbyEvent.GuestJoined,
-    data: LobbyGuestDataType,
+    data: LobbyEventJoinedData,
 }
 
 export interface LobbyEventGuestLeft extends BaseLobbyEventMessage {
     command: LobbyEvent.GuestLeft,
-    data: { guestId: string },
 }
 
-export interface LobbyEventMoveToGame extends BaseLobbyEventMessage {
+export interface LobbyEventMovedToGame extends BaseLobbyEventMessage {
     command: LobbyEvent.MovedToGame,
-    data: { gameId: string }
+    data: LobbyEventGameData,
 }
 
-export interface LobbyEventMoveToHub extends BaseLobbyEventMessage {
+export interface LobbyEventMovedToHub extends BaseLobbyEventMessage {
     command: LobbyEvent.MovedToHub,
-}
-
-export interface LobbyEventLobbyClosed extends BaseLobbyEventMessage {
-    command: LobbyEvent.LobbyClosed,
-    data: { lobbyId: string },
-}
-
-export interface LobbyEventReadinessChanged extends BaseLobbyEventMessage {
-    command: LobbyEvent.ReadinessChanged,
-    data: { playerId: string },
 }

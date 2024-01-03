@@ -1,14 +1,18 @@
 import { createErrorEvent } from './error-event.creator';
-import { createNewTurnEvent, createGameWonEvent, createGameDrawEvent } from './game-instance-event.creator';
-import { createHubUpdateGamesEvent } from './game-hub-event.creator';
-import { createLobbyGuestJoinedEvent, createLobbyGuestLeftEvent } from './game-lobby.creator';
+import { createInstanceNewTurnEvent, createInstanceGameWonEvent, createInstanceGameDrawEvent } from './game-instance-event.creator';
+import { createHubGamesUpdatedEvent, createHubQuitEvent, createHubToLobbyEvent } from './game-hub-event.creator';
+import { createLobbyGuestJoinedEvent, createLobbyGuestLeftEvent, createLobbyToGameEvent, createLobbyToHubEvent } from './game-lobby.creator';
 
 export {
     createErrorEvent,
-    createNewTurnEvent,
-    createGameWonEvent,
-    createGameDrawEvent,
-    createHubUpdateGamesEvent,
+    createInstanceNewTurnEvent,
+    createInstanceGameWonEvent,
+    createInstanceGameDrawEvent,
     createLobbyGuestJoinedEvent,
     createLobbyGuestLeftEvent,
+    createLobbyToGameEvent,
+    createLobbyToHubEvent,
+    createHubGamesUpdatedEvent,
+    createHubQuitEvent,
+    createHubToLobbyEvent,
 }

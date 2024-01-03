@@ -5,15 +5,19 @@ interface BaseHubEventMessage extends BaseWSMessageType {
     command: HubEvent,
 }
 
-export interface HubGameDataType {
+export interface HubEventGameData {
     gameId: string;
-    hostId: string;
     hostName: string;
 }
 
-export interface HubEventUpdateGames extends BaseHubEventMessage {
-    command: HubEvent.UpdateGames,
-    data: HubGameDataType[],
+export interface HubEventLobbyData {
+    gameId: string;
+    hostName: string;
+}
+
+export interface HubEventGamesUpdated extends BaseHubEventMessage {
+    command: HubEvent.GamesUpdated,
+    data: HubEventGameData[],
 }
 
 export interface HubEventQuitHub extends BaseHubEventMessage {
@@ -22,5 +26,5 @@ export interface HubEventQuitHub extends BaseHubEventMessage {
 
 export interface HubEventMovedToLobby extends BaseHubEventMessage {
     command: HubEvent.MovedToLobby,
-    data: { lobbyId: string },
+    data: HubEventLobbyData,
 }

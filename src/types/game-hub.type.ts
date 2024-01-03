@@ -5,7 +5,7 @@ export enum HubCommand {
 }
 
 export enum HubEvent {
-    UpdateGames = 'update_game_list',
+    GamesUpdated = 'update_game_list',
     MovedToLobby = 'moved_to_lobby',
     QuitHub = 'quit_hub',
 }

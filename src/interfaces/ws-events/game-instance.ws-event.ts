@@ -6,15 +6,19 @@ interface BaseGameEventMessage extends BaseWSMessageType {
     command: GameEvent,
 }
 
-export interface GameTurnDataType {
+export interface GameEventTurnData {
     row: GameTableRow,
     column: GameTableCol,
     mark: 'X' | 'O',
 }
 
+export interface GameEventWinnerData {
+    playerName: string,
+}
+
 export interface GameEventGameWon extends BaseGameEventMessage {
     command: GameEvent.GameWon,
-    data: { player_id: string },
+    data: GameEventWinnerData,
 }
 
 export interface GameEventGameDraw extends BaseGameEventMessage {
@@ -23,19 +27,5 @@ export interface GameEventGameDraw extends BaseGameEventMessage {
 
 export interface GameEventNewTurn extends BaseGameEventMessage {
     command: GameEvent.NewTurn,
-    data: GameTurnDataType,
-}
-
-export interface GameEventYourTurn extends BaseGameEventMessage {
-    command: GameEvent.YourTurn,
-    data: { turnTimeout: Date },
-}
-
-export interface GameEventMovedToLobby extends BaseGameEventMessage {
-    command: GameEvent.MovedToLobby,
-    data: { lobbyId: string },
-}
-
-export interface GameEventMovedToHub extends BaseGameEventMessage {
-    command: GameEvent.MovedToHub,
+    data: GameEventTurnData,
 }
