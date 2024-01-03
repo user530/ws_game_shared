@@ -1,14 +1,14 @@
-import { LobbyCommandStartGame, LobbyCommandAbortGame, LobbyCommandKickGuest, LobbyCommandDataType } from '../../interfaces/ws-messages';
+import { LobbyCommandStartGame, LobbyCommandKickGuest, LobbyCommandLeaveLobby, LobbyCommandStartData, LobbyCommandKickData, LobbyCommandLeaveData } from '../../interfaces/ws-messages';
 import { LobbyCommand, MessageType } from '../../types';
 
-export const createLobbyStartMessage = (lobbyData: LobbyCommandDataType): LobbyCommandStartGame => {
-    return { version: 1, type: MessageType.LobbyCommand, command: LobbyCommand.StartGame, data: lobbyData };
+export const createLobbyStartMessage = (startData: LobbyCommandStartData): LobbyCommandStartGame => {
+    return { version: 1, type: MessageType.LobbyCommand, command: LobbyCommand.StartGame, data: startData };
 };
 
-export const createLobbyAbortMessage = (lobbyData: LobbyCommandDataType): LobbyCommandAbortGame => {
-    return { version: 1, type: MessageType.LobbyCommand, command: LobbyCommand.AbortGame, data: lobbyData };
+export const createLobbyLeaveMessage = (leaveData: LobbyCommandLeaveData): LobbyCommandLeaveLobby => {
+    return { version: 1, type: MessageType.LobbyCommand, command: LobbyCommand.LeaveLobby, data: leaveData };
 };
 
-export const createLobbyKickMessage = (lobbyData: LobbyCommandDataType): LobbyCommandKickGuest => {
-    return { version: 1, type: MessageType.LobbyCommand, command: LobbyCommand.KickGuest, data: lobbyData };
+export const createLobbyKickMessage = (kickData: LobbyCommandKickData): LobbyCommandKickGuest => {
+    return { version: 1, type: MessageType.LobbyCommand, command: LobbyCommand.KickGuest, data: kickData };
 };

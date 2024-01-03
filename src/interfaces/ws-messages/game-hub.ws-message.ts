@@ -5,17 +5,25 @@ interface BaseHubCommandMessage extends BaseWSMessageType {
     command: HubCommand,
 }
 
-export interface HubCommandDataType {
-    player_id: string,
-    game_id: string,
+export interface HubCommandHostData {
+    playerId: string,
+}
+
+export interface HubCommandJoinData {
+    playerId: string,
+    lobbyId: string,
 }
 
 export interface HubCommandHostGame extends BaseHubCommandMessage {
     command: HubCommand.HostGame,
-    data: Pick<HubCommandDataType, 'player_id'>,
+    data: HubCommandHostData,
 }
 
 export interface HubCommandJoinGame extends BaseHubCommandMessage {
     command: HubCommand.JoinGame,
-    data: HubCommandDataType,
+    data: HubCommandJoinData,
+}
+
+export interface HubCommandLeaveHub extends BaseHubCommandMessage {
+    command: HubCommand.LeaveHub,
 }
