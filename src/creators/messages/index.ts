@@ -1,7 +1,7 @@
 import { createChatMessage } from './chat-message.creator';
 import { createHubHostMessage, createHubJoinMessage } from './game-hub-message.creator';
 import { createLobbyStartMessage, createLobbyKickMessage, createLobbyLeaveMessage } from './game-lobby-message.creator';
-import { createGameMakeTurnMessage, createGameForfeitMessage } from './game-instance-message.creator';
+import { createInstanceMakeTurnMessage, createInstanceForfeitMessage } from './game-instance-message.creator';
 
 export {
     createChatMessage,
@@ -10,6 +10,6 @@ export {
     createLobbyStartMessage,
     createLobbyKickMessage,
     createLobbyLeaveMessage,
-    createGameMakeTurnMessage,
-    createGameForfeitMessage,
+    createInstanceMakeTurnMessage,
+    createInstanceForfeitMessage,
 }
