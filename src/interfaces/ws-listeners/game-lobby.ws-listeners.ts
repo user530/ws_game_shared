@@ -5,8 +5,8 @@ export interface GameLobbyEventsHandler {
     wsErrorListener(errEvent: ErrorEvent): Promise<void>;
     wsLobbyGuestJoinedListener(guestJoinedEvent: LobbyEventGuestJoined): Promise<void>;
     wsLobbyGuestLeftListener(guestLeftEvent: LobbyEventGuestLeft): Promise<void>;
-    wsLobbyGuestToGameListener(movedToGameEvent: LobbyEventMovedToGame): Promise<void>;
-    wsLobbyGuestToHubListener(movedToHubEvent: LobbyEventMovedToHub): Promise<void>;
+    wsLobbyToGameListener(movedToGameEvent: LobbyEventMovedToGame): Promise<void>;
+    wsLobbyToHubListener(movedToHubEvent: LobbyEventMovedToHub): Promise<void>;
 };
 
 export interface GameLobbyMessagesHandler {
