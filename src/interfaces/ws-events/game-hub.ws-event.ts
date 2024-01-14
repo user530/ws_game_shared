@@ -1,3 +1,4 @@
+import { GameStatus } from '../../enums';
 import { BaseWSMessageType, HubEvent, MessageType } from '../../types';
 
 interface BaseHubEventMessage extends BaseWSMessageType {
@@ -7,12 +8,25 @@ interface BaseHubEventMessage extends BaseWSMessageType {
 
 export interface HubEventGameData {
     gameId: string;
-    hostName: string;
+    host: {
+        hostId: string;
+        hostName: string;
+    }
+    guest: null;
+    status: GameStatus.Pending;
 }
 
 export interface HubEventLobbyData {
     gameId: string;
-    hostName: string;
+    host: {
+        hostId: string;
+        hostName: string;
+    }
+    guest: {
+        guestId: string;
+        guestName: string;
+    };
+    status: GameStatus.Pending;
 }
 
 export interface HubEventGamesUpdated extends BaseHubEventMessage {
