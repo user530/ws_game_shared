@@ -4,4 +4,4 @@ export interface ErrorEvent extends BaseWSMessageType {
     type: MessageType.ErrorMessage,
     code: number,
     message: string,
-}
+};

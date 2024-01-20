@@ -11,9 +11,11 @@ import {
 import {
     HubEventGamesUpdated,
     HubEventMovedToLobby,
+    HubEventMovedToGame,
     HubEventQuitHub,
-    HubEventGameData,
     HubEventLobbyData,
+    HubEventToGameData,
+    HubEventToLobbyData,
 } from './game-hub.ws-event';
 
 import {
@@ -21,8 +23,8 @@ import {
     LobbyEventGuestLeft,
     LobbyEventMovedToGame,
     LobbyEventMovedToHub,
-    LobbyEventGameData,
     LobbyEventJoinedData,
+    LobbyEventToGameData,
 } from './game-lobby.ws-event';
 
 export {
@@ -32,15 +34,17 @@ export {
     GameEventNewTurn,
     HubEventGamesUpdated,
     HubEventMovedToLobby,
+    HubEventMovedToGame,
     HubEventQuitHub,
     LobbyEventGuestJoined,
     LobbyEventGuestLeft,
     LobbyEventMovedToGame,
     LobbyEventMovedToHub,
+    HubEventLobbyData,
+    HubEventToGameData,
+    HubEventToLobbyData,
+    LobbyEventJoinedData,
+    LobbyEventToGameData,
     GameEventTurnData,
     GameEventWinnerData,
-    HubEventGameData,
-    HubEventLobbyData,
-    LobbyEventGameData,
-    LobbyEventJoinedData,
 }
