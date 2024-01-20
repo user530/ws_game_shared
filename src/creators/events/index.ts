@@ -1,6 +1,6 @@
 import { createErrorEvent } from './error-event.creator';
 import { createInstanceNewTurnEvent, createInstanceGameWonEvent, createInstanceGameDrawEvent } from './game-instance-event.creator';
-import { createHubGamesUpdatedEvent, createHubQuitEvent, createHubToLobbyEvent } from './game-hub-event.creator';
+import { createHubGamesUpdatedEvent, createHubQuitEvent, createHubToLobbyEvent, createHubToGameEvent } from './game-hub-event.creator';
 import { createLobbyGuestJoinedEvent, createLobbyGuestLeftEvent, createLobbyToGameEvent, createLobbyToHubEvent } from './game-lobby.creator';
 
 export {
@@ -15,4 +15,5 @@ export {
     createHubGamesUpdatedEvent,
     createHubQuitEvent,
     createHubToLobbyEvent,
-}
+    createHubToGameEvent,
+};
