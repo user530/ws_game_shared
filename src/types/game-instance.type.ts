@@ -11,5 +11,5 @@ export enum GameEvent {
     NewTurn = 'new_turn',
     YourTurn = 'your_turn',
     MovedToLobby = 'moved_to_lobby',
-    MovedToHub = 'moved_to_hub'
+    MovedToHub = 'moved_to_hub',
 }
