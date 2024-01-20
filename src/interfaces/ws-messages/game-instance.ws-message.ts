@@ -1,29 +1,20 @@
 import { BaseWSMessageType, GameCommand, MessageType } from '../../types';
-import { GameTableCol, GameTableRow } from '../../enums';
+import { GamePlayerIdPair, RowColumnPair } from '../general';
 
 interface BaseGameCommandMessage extends BaseWSMessageType {
     type: MessageType.GameCommand,
     command: GameCommand,
-}
+};
 
-export interface GameCommandTurnData {
-    gameId: string,
-    playerId: string,
-    row: GameTableRow,
-    column: GameTableCol,
-}
-
-export interface GameCommandForfeitData {
-    gameId: string,
-    playerId: string,
-}
+export interface GameCommandTurnData extends GamePlayerIdPair, RowColumnPair { };
+export interface GameCommandForfeitData extends GamePlayerIdPair { };
 
 export interface GameCommandMakeTurn extends BaseGameCommandMessage {
     command: GameCommand.MakeTurn,
     data: GameCommandTurnData,
-}
+};
 
 export interface GameCommandForfeit extends BaseGameCommandMessage {
     command: GameCommand.ForfeitMatch,
     data: GameCommandForfeitData,
-}
+};
