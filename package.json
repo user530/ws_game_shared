@@ -1,6 +1,6 @@
 {
   "name": "@user530/ws_game_shared",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Shared data for ws_game app",
   "main": "dist/index.js",
   "repository": {
