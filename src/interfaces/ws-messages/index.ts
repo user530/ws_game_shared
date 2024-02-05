@@ -22,10 +22,13 @@ import {
     GameCommandForfeitData,
 } from './game-instance.ws-message';
 
-import { ChatMessage } from './chat.ws-message';
+import {
+    ChatCommandSendMessage,
+    ChatCommandSendMsgData,
+} from './chat.ws-message';
 
 export {
-    ChatMessage,
+    ChatCommandSendMessage,
     HubCommandHostGame,
     HubCommandJoinGame,
     HubCommandLeaveHub,
@@ -34,6 +37,7 @@ export {
     LobbyCommandKickGuest,
     GameCommandMakeTurn,
     GameCommandForfeit,
+    ChatCommandSendMsgData,
     HubCommandHostData,
     HubCommandJoinData,
     LobbyCommandStartData,
