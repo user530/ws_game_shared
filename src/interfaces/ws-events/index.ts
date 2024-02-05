@@ -1,5 +1,7 @@
 import { ErrorEvent } from './error.ws-event';
 
+import { ChatEvent } from './chat.ws-event';
+
 import {
     GameEventGameWon,
     GameEventGameDraw,
@@ -29,6 +31,7 @@ import {
 
 export {
     ErrorEvent,
+    ChatEvent,
     GameEventGameWon,
     GameEventGameDraw,
     GameEventNewTurn,
