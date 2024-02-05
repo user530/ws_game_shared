@@ -5,7 +5,8 @@ export enum MessageType {
     LobbyEvent = 'lobby_event',
     GameCommand = 'game_command',
     GameEvent = 'game_event',
-    ChatMessage = 'chat_message',
+    ChatCommand = 'chat_command',
+    ChatEvent = 'chat_event',
     ErrorMessage = 'error',
 }
 
