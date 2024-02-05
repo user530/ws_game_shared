@@ -56,8 +56,6 @@ export interface TurnData extends RowColumnPair {
 };
 
 export interface MessageData {
-    timestamp: [number, number],
     user: string,
     message: string,
-    isWhisper: boolean,
-}
+};
