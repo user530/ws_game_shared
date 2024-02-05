@@ -1,7 +1,6 @@
-import { ChatEvent } from '../../interfaces/ws-events';
-import { MessageType } from '../../types';
-import { MessageData } from '../../interfaces/general';
+import { ChatEventNewMessage, ChatEventNewMsgData } from '../../interfaces/ws-events';
+import { ChatEvent, MessageType } from '../../types';
 
-export const createChatEvent = (eventData: MessageData): ChatEvent => {
-    return { version: 1, type: MessageType.ChatMessage, eventData };
+export const createChatNewMsgEvent = (newMsgData: ChatEventNewMsgData): ChatEventNewMessage => {
+    return { version: 1, type: MessageType.ChatEvent, command: ChatEvent.NewMessage, data: newMsgData };
 };
