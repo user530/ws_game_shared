@@ -1,7 +1,17 @@
-import { BaseWSMessageType, MessageType } from '../../types';
+import { BaseWSMessageType, MessageType, ChatEvent } from '../../types';
 import { MessageData } from '../general';
 
-export interface ChatEvent extends BaseWSMessageType {
-    type: MessageType.ChatMessage,
-    eventData: MessageData,
+interface BaseChatEventMessage extends BaseWSMessageType {
+    type: MessageType.ChatEvent,
+    command: ChatEvent,
+};
+
+export interface ChatEventNewMsgData extends MessageData {
+    timestamp: [number, number],
+    isWhisper: boolean,
+};
+
+export interface ChatEventNewMessage extends BaseChatEventMessage {
+    command: ChatEvent.NewMessage,
+    data: ChatEventNewMsgData,
 };

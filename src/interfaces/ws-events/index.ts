@@ -1,6 +1,9 @@
 import { ErrorEvent } from './error.ws-event';
 
-import { ChatEvent } from './chat.ws-event';
+import {
+    ChatEventNewMessage,
+    ChatEventNewMsgData,
+} from './chat.ws-event';
 
 import {
     GameEventGameWon,
@@ -31,7 +34,7 @@ import {
 
 export {
     ErrorEvent,
-    ChatEvent,
+    ChatEventNewMessage,
     GameEventGameWon,
     GameEventGameDraw,
     GameEventNewTurn,
@@ -43,6 +46,7 @@ export {
     LobbyEventGuestLeft,
     LobbyEventMovedToGame,
     LobbyEventMovedToHub,
+    ChatEventNewMsgData,
     HubEventLobbyData,
     HubEventToGameData,
     HubEventToLobbyData,
