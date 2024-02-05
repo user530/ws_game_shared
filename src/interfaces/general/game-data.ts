@@ -54,3 +54,10 @@ export interface GamePlayerIdPair extends PlayerId {
 export interface TurnData extends RowColumnPair {
     mark: 'X' | 'O',
 };
+
+export interface MessageData {
+    timestamp: [number, number],
+    user: string,
+    message: string,
+    isWhisper: boolean,
+}

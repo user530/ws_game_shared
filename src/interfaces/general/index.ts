@@ -11,6 +11,7 @@ import {
     PlayerId,
     GamePlayerIdPair,
     RowColumnPair,
+    MessageData,
 } from './game-data';
 
 export {
@@ -27,4 +28,5 @@ export {
     HostData,
     TurnData,
     RowColumnPair,
+    MessageData,
 }
